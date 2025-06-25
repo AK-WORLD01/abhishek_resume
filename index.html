@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Kumar - Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            font-size: 22px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .skills, .soft-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skills span, .soft-skills span {
+            background-color: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .signature {
+            text-align: right;
+            margin-top: 20px;
+            font-style: italic;
+        }
+        .download-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        @media print {
+            .download-btn {
+                display: none;
+            }
+        }
+    </style>
+    <!-- jsPDF library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <a href="#" class="download-btn" id="downloadBtn">Download as PDF</a>
+    
+    <div class="container" id="resumeContent">
+        <h1>ABHISHEK KUMAR</h1>
+        <div class="contact-info">
+            <p>B. Tech (Computer Science and Engineering)</p>
+            <p>Email: 22cse357.abhishekkumar@giet.edu | Phone: +917518531311</p>
+        </div>
+
+        <div class="section">
+            <h2>Career Objective</h2>
+            <p>Seeking a challenging position that will provide opportunities for career growth, advancement, and where I can make meaningful contributions to the company's success.</p>
+        </div>
+
+        <div class="section">
+            <h2>Educational Qualifications</h2>
+            <table>
+                <tr>
+                    <th>Degree and Year</th>
+                    <th>Institute Name</th>
+                    <th>Board / University</th>
+                    <th>% / CGPA</th>
+                </tr>
+                <tr>
+                    <td>B. Tech (CSE) 2022-2026</td>
+                    <td>Gandhi Institute of Engineering and Technology University, Gunupur</td>
+                    <td>GIET UNIVERSITY</td>
+                    <td>6.5</td>
+                </tr>
+                <tr>
+                    <td>+2 Science in 2021</td>
+                    <td>Shree Bhagirathi Maharaj Inter College Nayepur Varanasi</td>
+                    <td>State Board</td>
+                    <td>6.02</td>
+                </tr>
+                <tr>
+                    <td>10th in 2019</td>
+                    <td>Green Vally Public Penta, Rayagada</td>
+                    <td>CBSE</td>
+                    <td>6.71</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Training / Certification</h2>
+            <ul>
+                <li>Microsoft Certified: Node.js Developer</li>
+                <li>Microsoft Learn Student Ambassador Certified (Frontend of Facebook)</li>
+                <li>IBM Certified: Journey to Cloud</li>
+                <li>IBM Certified: Enterprise-Grade AI Specialist & Data Science</li>
+                <li>AWS & GDSC Certified: DevOps for Web Development</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills">
+                <span>Python</span>
+                <span>Data Analytics</span>
+                <span>Algorithms</span>
+                <span>Full-Stack Development (MEAN)</span>
+                <span>C</span>
+                <span>Machine Learning</span>
+                <span>Java</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Soft Skills</h2>
+            <div class="soft-skills">
+                <span>Communication</span>
+                <span>Leadership</span>
+                <span>Time Management</span>
+                <span>Teamwork</span>
+                <span>Problem Solving</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Position of Responsibility</h2>
+            <h3>Management Lead at Android and IoT Club</h3>
+            <ul>
+                <li>Operational Leadership: Managed club operations, scheduling, and logistics for 50+ members.</li>
+                <li>Event Execution: Organized 10+ technical workshops, hackathons, and guest lectures with 80%+ participation rates.</li>
+                <li>Team Coordination: Led cross-functional teams (technical/marketing/design) to deliver projects on time.</li>
+                <li>Growth Strategy: Boosted member engagement by 40% through feedback-driven initiatives and skill-building sessions.</li>
+                <li>Documentation: Maintained records, progress reports, and knowledge repositories for future scalability.</li>
+            </ul>
+            <p><strong>Developed Skills:</strong> Communication, Leadership, Teamwork, Problem Solving, Time Management</p>
+        </div>
+
+        <div class="section">
+            <h2>Internship Programs</h2>
+            <h3>Summer Internship at JK Company IT Department</h3>
+            <p><strong>Helpdesk Tool</strong></p>
+            <p><strong>Description:</strong> Created a helpdesk tool for the IT department as an internal project with the following functionalities:</p>
+            <ul>
+                <li><strong>Admin:</strong> Can create employee registration, engineer registration, monitor tickets created by employees, and assign tickets to engineers.</li>
+                <li><strong>Employee:</strong> Can create tickets, check ticket history, and view ticket status.</li>
+                <li><strong>Engineer:</strong> Receives assigned ticket notifications, can take action on assigned tickets, solve them, and send resolution feedback to admin and employee.</li>
+            </ul>
+            <h3>Summer Internship at Remark Skill Education</h3>
+            <p>Data Science using Python</p>
+            <h3>AIML Intern at EduNet Foundation</h3>
+            <ul>
+                <li><strong>Mini Project: Iris Flower Prediction</strong>
+                    <ul>
+                        <li>Built a machine learning model to classify Iris species using sepal/petal measurements.</li>
+                        <li>Applied Logistic Regression, SVM, and KNN, achieving 95%+ accuracy.</li>
+                        <li>Tools: Python, scikit-learn, pandas, matplotlib.</li>
+                        <li>Performed EDA, feature analysis, and model evaluation.</li>
+                    </ul>
+                </li>
+                <li><strong>Major Project: Disease Prediction</strong>
+                    <ul>
+                        <li>Developed an ML model to predict diseases (e.g., diabetes, heart disease) based on patient health data.</li>
+                        <li>Preprocessed and analyzed datasets, handled missing values, and performed feature engineering.</li>
+                        <li>Trained models (Logistic Regression, Random Forest, SVM) and optimized hyperparameters for accuracy.</li>
+                        <li>Achieved >90% precision using cross-validation and performance metrics (ROC-AUC, F1-score).</li>
+                        <li>Tools: Python, scikit-learn, pandas, NumPy, Matplotlib/Seaborn.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Full-Stack Web Development Intern at TECHISMUST Innovation Lab</h3>
+            <ul>
+                <li><strong>Movie Website (HTML, CSS, JavaScript, SQL)</strong>
+                    <ul>
+                        <li>Developed a dynamic movie review platform with user authentication and search functionality.</li>
+                        <li>Designed a responsive UI with CSS animations and interactive elements (ratings, filters).</li>
+                        <li>Integrated SQL database to store user profiles, movie details, and reviews.</li>
+                        <li>Implemented AJAX for seamless data fetching and DOM updates.</li>
+                    </ul>
+                </li>
+                <li><strong>Blog Website with CMS (React.js, Bootstrap, MongoDB, Node.js)</strong>
+                    <ul>
+                        <li>Built a full-stack blog with CRUD operations for posts, user comments, and likes.</li>
+                        <li>Used React hooks for state management and Bootstrap for mobile-first design.</li>
+                        <li>Connected to MongoDB (MERN stack) for scalable data storage and retrieval.</li>
+                        <li>Added features like JWT authentication and rich-text editing (e.g., TinyMCE).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Project Details</h2>
+            <h3>Hospital Management System</h3>
+            <p><strong>Languages Used:</strong> HTML, CSS, PHP, MySQL</p>
+            <p><strong>Description:</strong></p>
+            <ul>
+                <li>Developed secure web system for admin, doctors, and patients.</li>
+                <li>Implemented appointment booking with email notifications.</li>
+                <li>Created patient records and billing management.</li>
+                <li>Built with PHP backend and MySQL database.</li>
+                <li>Designed responsive UI with HTML/CSS.</li>
+            </ul>
+
+            <h3>Secure Video Confession Platform</h3>
+            <p><strong>Languages Used:</strong> React, Node.js, PostgreSQL</p>
+            <p><strong>Description:</strong></p>
+            <ul>
+                <li>Developed a secure tri-level reporting system to combat government corruption using public whistleblowing, employee case management, and admin oversight.</li>
+                <li>Public Portal: Complaint submission, real-time tracking.</li>
+                <li>Employee Module: Case assignment, evidence verification, progress updates.</li>
+                <li>Admin Dashboard: Monitoring, analytics, escalation of unresolved cases.</li>
+            </ul>
+
+            <h3>Face Detection using OpenCV</h3>
+            <p><strong>Language Used:</strong> Python</p>
+            <p><strong>Description:</strong></p>
+            <ul>
+                <li>A haar-cascade file was taken as a pretrained model and using OpenCV's drawbox feature and the model, we can detect faces in the live feed of a webcam.</li>
+                <li>Used minimum possible lines of code, high accuracy.</li>
+                <li>To be able to draw a box around detected faces, for future applications such as facial recognition.</li>
+                <li><strong>Skills Developed:</strong> OpenCV, Computer Vision, Machine Learning.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Personal Details</h2>
+            <ul>
+                <li><strong>Date of Birth:</strong> 20/06/2006</li>
+                <li><strong>Gender:</strong> Male</li>
+                <li><strong>Father's Name:</strong> Mr. Subash Chandra</li>
+                <li><strong>Address:</strong> Barahi Newada, Varanasi (221207)</li>
+                <li><strong>Alternate Phone Number:</strong> 7518531311</li>
+                <li><strong>Languages Known:</strong> English, Hindi</li>
+                <li><strong>Interests & Hobbies:</strong> Creating websites, Reading Books, Drawing</li>
+            </ul>
+        </div>
+
+        <div class="signature">
+            <p>Place: Gunupur, Odisha</p>
+            <p>Abhishek Kumar</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // Initialize jsPDF
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'mm', 'a4');
+            
+            // Get the resume content element
+            const element = document.getElementById('resumeContent');
+            
+            // Use html2canvas to capture the content
+            html2canvas(element, {
+                scale: 2, // Higher quality
+                logging: false,
+                useCORS: true
+            }).then(canvas => {
+                const imgData = canvas.toDataURL('image/png');
+                const imgWidth = 210; // A4 width in mm
+                const pageHeight = 295; // A4 height in mm
+                const imgHeight = canvas.height * imgWidth / canvas.width;
+                
+                let heightLeft = imgHeight;
+                let position = 0;
+                
+                // Add first page
+                doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+                
+                // Add additional pages if needed
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    doc.addPage();
+                    doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+                
+                // Save the PDF
+                doc.save('Abhishek_Kumar_Resume.pdf');
+            });
+        });
+    </script>
+</body>
+</html>
