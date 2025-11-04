@@ -49,19 +49,10 @@
       width: 210mm;
       min-height: 297mm;
       background: white;
-      padding: 18mm 15mm;
+      padding: 15mm 15mm;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
       font-size: 11pt;
       position: relative;
-    }
-
-    /* 3px Top & Bottom Safe Margin (Header/Footer) */
-    .resume::before,
-    .resume::after {
-      content: '';
-      display: block;
-      height: 3px;
-      background: transparent;
     }
 
     .header {
@@ -87,6 +78,7 @@
 
     .section {
       margin-top: 14pt;
+      page-break-inside: avoid;
     }
 
     .section-title {
@@ -102,6 +94,7 @@
 
     .content {
       margin-bottom: 10pt;
+      page-break-inside: avoid;
     }
 
     .job-title {
@@ -114,7 +107,7 @@
     .company {
       font-style: italic;
       color: #555;
-      margin-bottom: 4pt;
+      margin-bottom: 2pt;
     }
 
     .date-location {
@@ -143,6 +136,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 15pt;
       margin-top: 8pt;
+      page-break-inside: avoid;
     }
 
     .skills-list {
@@ -156,6 +150,7 @@
       margin-bottom: 4pt;
       position: relative;
       padding-left: 12pt;
+      break-inside: avoid;
     }
 
     .skills-list li::before {
@@ -171,6 +166,7 @@
       border-collapse: collapse;
       margin-top: 8pt;
       font-size: 10pt;
+      page-break-inside: avoid;
     }
 
     th, td {
@@ -185,11 +181,31 @@
       color: #1a5276;
     }
 
+    .skills-cert-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15pt;
+      margin-top: 8pt;
+      page-break-inside: avoid;
+    }
+
     @media print {
-      body, .resume { background: white; box-shadow: none; margin: 0; padding: 0; }
+      body, .resume { 
+        background: white; 
+        box-shadow: none; 
+        margin: 0; 
+        padding: 0; 
+        width: 100%;
+      }
       .download-btn { display: none; }
-      .resume { padding: 15mm; width: 100%; }
-      .resume::before, .resume::after { height: 3px; }
+      .resume { 
+        padding: 15mm; 
+        width: 100%; 
+        min-height: auto;
+      }
+      .section {
+        page-break-inside: avoid;
+      }
     }
   </style>
 </head>
@@ -201,8 +217,6 @@
 
   <div class="resume" id="resumeContent">
 
-    <!-- 3px Top Margin (Safe) -->
-    
     <!-- Header -->
     <div class="header">
       <h1>ABHISHEK KUMAR</h1>
@@ -332,9 +346,10 @@
 
     <!-- Skills & Certifications -->
     <div class="section">
-      <div class="two-col">
+      <div class="section-title">Technical Skills & Certifications</div>
+      <div class="skills-cert-container">
         <div>
-          <div class="section-title">Technical Skills</div>
+          <div class="section-title" style="font-size: 11pt; border-bottom: none; margin-bottom: 6pt;">Technical Skills</div>
           <ul class="skills-list">
             <li>Python Programming</li>
             <li>Machine Learning</li>
@@ -358,7 +373,7 @@
         </div>
 
         <div>
-          <div class="section-title">Certifications</div>
+          <div class="section-title" style="font-size: 11pt; border-bottom: none; margin-bottom: 6pt;">Certifications</div>
           <ul>
             <li>Node.js Developer – Microsoft Certified</li>
             <li>Student Ambassador – Microsoft Learn</li>
@@ -425,8 +440,6 @@
       </table>
     </div>
 
-    <!-- 3px Bottom Margin (Safe) -->
-
   </div>
 
   <script>
@@ -434,10 +447,21 @@
       const element = document.getElementById('resumeContent');
       html2pdf()
         .set({
-          margin: [10, 10, 10, 10],  // Safe margin all sides
+          margin: [10, 10, 10, 10],
           filename: 'Abhishek_Kumar_Resume.pdf',
-          html2canvas: { scale: 2, useCORS: true },
-          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+          html2canvas: { 
+            scale: 2, 
+            useCORS: true,
+            letterRendering: true
+          },
+          jsPDF: { 
+            unit: 'mm', 
+            format: 'a4', 
+            orientation: 'portrait' 
+          },
+          pagebreak: { 
+            mode: ['avoid-all', 'css', 'legacy'] 
+          }
         })
         .from(element)
         .save();
